@@ -1,0 +1,10 @@
+Package: classification
+Title: Classify Two-Class Data
+Version: 0.0.0.9000
+Authors@R:
+    person("Adam", "Shen", "adam.shen@carleton.ca", role = c("aut", "cre"))
+Description: Provide tools for classifying two-class data.
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.0.0
