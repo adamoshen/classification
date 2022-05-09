@@ -22,7 +22,7 @@
 #' @examples
 #' mu <- matrix(c(1, 3))
 #' sigma <- matrix(c(3, 1, 1, 2), 2, 2)
-#' rmvtnorm(n = 5, mu, sigma)
+#' rmvtnorm(n = 5, mean = mu, cov = sigma)
 rmvtnorm <- function(n, mean, cov) {
   d <- nrow(cov)
 
