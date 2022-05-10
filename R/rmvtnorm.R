@@ -3,15 +3,13 @@
 #' @details Consider a random sample of size 12 of Uniform(0,1) random variables. Let \eqn{X} be the
 #' sum of the sample elements. Then \eqn{X} has an approximate \eqn{N(0,1)} distribution.
 #'
-#' Let \eqn{\mathbf{Z}} be a \eqn{d \times n} matrix with distribution
-#' \eqn{N_{d}(\mathbf{0},\,\mathbb{I})}. Let \eqn{\mathbf{X}} be a \eqn{d \times n} random matrix
-#' with distribution \eqn{N_{d}(\bm{\mu},\,\mathbf{\Sigma})}. If \eqn{\mathbf{P}} and
-#' \eqn{\mathbf{D}} are the eigenvector and eigenvalue matrices, respectively, then
+#' Let \eqn{Z} be a \eqn{d * n} matrix with distribution \eqn{N_d(0, 1_d)}. Let \eqn{X} be a
+#' \eqn{d * n} random matrix with distribution \eqn{N_d(\mu, \Sigma)}. If \eqn{P} and \eqn{D} are
+#' the eigenvector and eigenvalue matrices of \eqn{\Sigma}, respectively, then
 #'
-#' \deqn{\mathbf{X} \,=\, \mathbf{PD}^{\frac{1}{2}}\mathbf{Z} \,+\, \bm{\mu}\mathbf{1}'
-#' \quad\sim\quad N_{d}(\bm{\mu},\, \mathbf{\Sigma}),}
+#' \deqn{X = PD^{1/2}Z + \mu1'}
 #'
-#' where \eqn{\mathbf{1}} is a column vector of ones.
+#' has a \eqn{N_d(\mu, \Sigma)} distribution, where \eqn{1} is a column vector of ones.
 #'
 #' @param n The sample size.
 #' @param mean A \eqn{d \times 1} matrix containing the means of the variables.
