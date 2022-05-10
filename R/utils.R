@@ -12,14 +12,6 @@ eval_quadratic <- function(x, A, b, c) {
   drop(t(x) %*% A %*% x + b %*% x + c)
 }
 
-matrix_to_tibble <- function(x) {
-  as_tibble(t(x))
-}
-
-tibble_to_matrix <- function(x) {
-  t(as.matrix(x))
-}
-
 gsolve <- function(x) {
   solve(t(x) %*% x) %*% t(x)
 }
