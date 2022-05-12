@@ -9,10 +9,10 @@ rmvtnorm(n, mean, cov)
 \arguments{
 \item{n}{The sample size.}
 
-\item{mean}{A \eqn{d \times 1} matrix containing the means of the variables.}
+\item{mean}{A \eqn{d} by \eqn{1} matrix containing the means of the variables.}
 
-\item{cov}{A \eqn{d \times d} positive-definite, symmetric matrix specifying the covariance
-matrix of the variables.}
+\item{cov}{A \eqn{d} by \eqn{d} positive-definite, symmetric matrix specifying the covariance matrix
+of the variables.}
 }
 \value{
 A matrix with \code{d} rows and \code{n} columns.
@@ -21,16 +21,50 @@ A matrix with \code{d} rows and \code{n} columns.
 Sample from the (approximate) multivariate normal distribution
 }
 \details{
-Consider a random sample of size 12 of Uniform(0,1) random variables. Let \eqn{X} be the
-sum of the sample elements. Then \eqn{X} has an approximate \eqn{N(0,1)} distribution.
+Consider a random sample of size 12 of Uniform(0,1) random variables.
+Let \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("X", displayMode=FALSE)
+} be the sum of the sample elements. Then \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("X - 6", displayMode=FALSE, include_css=FALSE)
+} has an approximate \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("N(0,1)", displayMode=FALSE, include_css=FALSE)
+} distribution.
 
-Let \eqn{Z} be a \eqn{d * n} matrix with distribution \eqn{N_d(0, 1_d)}. Let \eqn{X} be a
-\eqn{d * n} random matrix with distribution \eqn{N_d(\mu, \Sigma)}. If \eqn{P} and \eqn{D} are
-the eigenvector and eigenvalue matrices of \eqn{\Sigma}, respectively, then
-
-\deqn{X = PD^{1/2}Z + \mu1'}
-
-has a \eqn{N_d(\mu, \Sigma)} distribution, where \eqn{1} is a column vector of ones.
+Let \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("\\\mathbf{Z}", displayMode=FALSE, include_css=FALSE)
+} be a \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("d \\\times n", displayMode=FALSE, include_css=FALSE)
+} matrix with distribution \Sexpr[results=rd, stage=build]{
+katex::math_to_rd(
+"N_{d}(\\\mathbf{0},\\\,\\\mathbb{I}_{d})",
+displayMode=FALSE, include_css=FALSE)
+}. Let \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("X", displayMode=FALSE, include_css=FALSE)
+} be a \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("d \\\times n", displayMode=FALSE, include_css=FALSE)
+} random matrix with distribution \Sexpr[results=rd, stage=build]{
+katex::math_to_rd(
+"N_{d}(\\\bm{\\\mu},\\\,\\\bm{\\\Sigma})",
+displayMode=FALSE, include_css=FALSE)
+}. If \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("\\\mathbf{P}", displayMode=FALSE, include_css=FALSE)
+} and \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("\\\mathbf{D}", displayMode=FALSE, include_css=FALSE)
+} are the eigenvector and eigenvalue matrices of \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("\\\bm{\\\Sigma}", displayMode=FALSE, include_css=FALSE)
+}, respectively, then
+\Sexpr[results=rd, stage=build]{
+katex::math_to_rd(
+"\\\mathbf{X} \\\,=\\\, \\\\mathbf{PD}^{1/2}\\\mathbf{Z} \\\,+\\\, \\\bm{\\\mu}\\\mathbf{1}'",
+include_css=FALSE)
+}
+has a \Sexpr[results=rd, stage=build]{
+katex::math_to_rd(
+"N_{d}(\\\bm{\\\mu},\\\,\\\bm{\\\Sigma})",
+displayMode=FALSE, include_css=FALSE)
+} distribution, where \Sexpr[results=rd, stage=build]{
+katex::math_to_rd("\\\mathbf{1}", displayMode=FALSE, include_css=FALSE)
+} is a column vector of ones.
 }
 \examples{
 mu <- matrix(c(1, 3))
