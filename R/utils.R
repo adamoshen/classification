@@ -21,3 +21,5 @@ left_mult <- function(x, a) {
 
   drop(t(a) %*% x)
 }
+
+utils::globalVariables("where")
