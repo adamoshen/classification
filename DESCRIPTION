@@ -9,4 +9,7 @@ Encoding: UTF-8
 Roxygen: list(markdown = FALSE)
 RoxygenNote: 7.1.2
 Imports: 
-    magrittr
+    dplyr,
+    magrittr,
+    purrr,
+    tidyselect
